@@ -22,6 +22,6 @@ urlpatterns = [
     # path del core 
     path('', include('core.urls')),
     # path de contacto
-    #path('contact/', include('contact.urls'))
+    path('contact/', include('contact.urls'))
 ]
 
