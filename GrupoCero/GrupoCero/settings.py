@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,10 @@ WSGI_APPLICATION = 'GrupoCero.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xepdb1',
+        'USER': 'django',
+        'PASSWORD': 'django',
     }
 }
 
@@ -119,3 +122,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ENVIO AUTOMATICO DE EMAIL
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '2440b950374115'
+EMAIL_HOST_PASSWORD = '6b307f7d76fcb5'
+EMAIL_PORT = '2525'
+
