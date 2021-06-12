@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %} {% load static %} {% block contenido %}
+
+<!-- PUBLICACION -->
+<div class="container-xl contacto">
+
+    <div class="row justify-content-left">
+        <div class="col-12 col-md-10 col-lg-6">
+            <form id="formulario">
+                <h1>Publicar una obra</h1>
+
+                <div id="formulario_nombre">
+                    <label for="nombre">Nombre de la obra</label>
+                    <input type="text" class="form-control" id="nombreObra" name="nombreObra" placeholder="Ej: Atardecer en mi mente">
+                    <p class="input-error">Debe completar el campo con el nombre de la obra</p>
+                </div>
+
+                <div id="formulario_fecha">
+                    <label for="fecha">Año</label>
+                    <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Ej: 2021">
+                    <p class="input-error">Debe completar el campo con el año de la obra ( 4 digitos )</p>
+                </div>
+
+                <div id="formulario_precio">
+                    <label for="valor">Precio (en pesos chilenos)</label>
+                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Ej: 250.000">
+                    <p class="input-error">Debe completar el campo con el precio</p>
+                </div>
+
+                <div id="formulario_tipo">
+                    <label for="tipo-obra">Tipo de obra</label>
+                    <input type="text" class="form-control" id="tipoObra" name="tipoObra" placeholder="Ej: Original, Réplica, Por encargoc etc">
+                    <p class="input-error">Debe completar el campo con el tipo de obra</p>
+                </div>
+
+                <div id="formulario_dim">
+                    <label for="dimensiones">Dimensiones (en centimetros)</label>
+                    <div class="container row justify-content-between">
+                        <input type="number" class="form-control col-3" id="alto" name="alto" placeholder="Alto">
+                        <input type="number" class="form-control col-3" id="ancho" name="ancho" placeholder="Ancho">
+                        <input type="number" class="form-control col-3" id="largo" name="largo" placeholder="Largo">
+                        <p class="input-error">Debe completar el alto, ancho y largo de la obra</p>
+                    </div>
+                </div>
+
+                <div id="formulario_soporte">
+                    <label for="soporte">Soporte (si aplica)</label>
+                    <input type="text" class="form-control" id="soporte" name="soporte" placeholder="Ej: Piedra, Concreto, Madera, etc">
+                    <p class="input-error">Debe completar el campo con el tipo de soporte</p>
+                </div>
+
+                <div id="formulario_desc">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" id="desc" name="desc" placeholder="Ej: Piedra, Concreto, Madera, etc" rows="7"></textarea>
+                    <p class="input-error">Debe completar el campo con una descripción</p>
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3" id="formulario_imagen">
+                    <label for="imagenes">Imagenes</label><br>
+                    <input class="archive" aria-labelledby="oOS8J" jsname="jdyrU" name="encoded_image" type="file" jsaction="change:sFeBqf">
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3">
+                    <div><a type="Enviar" class="mar-bot-20 btn btn-outline-dark">Adjuntar otra imagen</a></div>
+                    <button type="submit" class="mar-bot-20 btn btn-danger">Publicar obra</button>
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3" id="formulario_aviso">
+                    <p class="error-envio"><b>Error:</b> Por favor rellene todos los campos del formulario</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- validaciones -->
+    <script src="{% static 'core/js/validacion-publicacion.js' %}"></script>
+</div>
+
+{% endblock contenido %}

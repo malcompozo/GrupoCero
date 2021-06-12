@@ -1,0 +1,220 @@
+{% extends 'core/base.html' %} {% load static %} {% block contenido %}
+
+<!-- HEADER -->
+<header>
+    <div id="header_img" style="background-image: url('{% static 'core/img/cafe_header.jpg' %}')">
+        <div id="header_text">
+            <h2>Café/Galería</h2>
+            <h1>Colectivo Grupo Cero</h1>
+            <h3>"Un lugar para relajarse, contemplar y catalizar tus ideas"</h3>
+        </div>
+    </div>
+</header>
+
+<!-- CONTENIDO ACERCA DE -->
+<div class="container-xl">
+
+    <div class="linea"></div>
+    <div class="row justify-content-center">
+        <div class="col-8 col-md-4 col-lg-5">
+
+            <h2>Acerca de la galería y los artistas que le dan vida</h2>
+            <p class="p text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corrupti quae deserunt qui totam unde mollitia praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis <a class="text-link"
+                    href="">dignissimos labore</a>.
+            </p>
+            <p class="p text-left">
+                Debitis, corrupti quae deserunt qui totam unde mollitia <a class="text-link" href="">dorime interimo
+                        adapare dorime</a> praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis.
+            </p>
+        </div>
+        <div class="col-8 col-md-4 col-lg-5">
+            <img class="img-fluid box-shadow img mx-auto d-block" src="{% static 'core/img/grupo_artistas.jpg' %}" alt="Artistas de Grupo Cero">
+        </div>
+    </div>
+    <div class="linea"></div>
+</div>
+
+<!-- CONTENIDO café y cuestiones -->
+<div class=" container-xl cont_fondo">
+
+    <div class="row justify-content-center">
+
+        <div class="col-8 col-md-4 col-lg-5">
+            <img class="img-fluid box-shadow img mx-auto d-block" src="{% static 'core/img/cafe.jpg' %}" alt="cafe y cuestiones pa comer">
+        </div>
+
+        <div class="col-8 col-md-4 col-lg-5">
+            <h2>Conoce nuestra cafetería</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corrupti quae deserunt qui totam unde mollitia praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis.
+            </p>
+            <button type="button" class="btn primario text-white mt-2">Descarga nuestro menu >></button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CAROUSEL OBRAS DESTACADAS -->
+<section class="pt-5 pb-5 container-xl card_slice">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2 class=" text-lg-left mb-3 text-white">Obras destacadas del mes</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn primario text-white mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn primario mb-3 text-white" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="row card-deck">
+                                <div class="col-md-4 mb-3">
+
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/escultura_pez.jpg' %}" alt="fish-Head">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Las olas y las chaas</h4>
+                                            <p class="card-text">Fernando Fernandino Goyunoreguachea. </p>
+                                            <h6></h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra-2.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/tejido_mandala.jpg' %}" alt="mandala">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Tejido de lana</h4>
+                                            <p class="card-text">Matías Rebolledo Rebolledo.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra-3.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/pintura.jpg' %}" alt="Card image">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Iglesia en la plaza de Munich</h4>
+                                            <p class="card-text">Adolfo Hitmonchan.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row card-deck">
+                                <div class="col-md-4 mb-3">
+
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/escultura_pez.jpg' %}" alt="fish-Head">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Las olas y las chaas</h4>
+                                            <p class="card-text">Fernando Fernandino Goyunoreguachea. </p>
+                                            <h6></h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/tejido_mandala.jpg' %}" alt="mandala">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Tejido de lana</h4>
+                                            <p class="card-text">Matías Rebolledo Rebolledo.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/pintura.jpg' %}" alt="Card image">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Iglesia en la plaza de Munich</h4>
+                                            <p class="card-text">Adolfo Hitmonchan.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row card-deck">
+                                <div class="col-md-4 mb-3">
+
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/escultura_pez.jpg' %}" alt="fish-Head">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Las olas y las chaas</h4>
+                                            <p class="card-text">Fernando Fernandino Goyunoreguachea. </p>
+                                            <h6></h6>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/tejido_mandala.jpg' %}" alt="mandala">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Tejido de lana</h4>
+                                            <p class="card-text">Matías Rebolledo Rebolledo.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <a href="detalle-obra.html">
+                                            <img class="img-fluid card-cover" src="{% static 'core/img/pintura.jpg' %}" alt="Card image">
+                                        </a>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Iglesia en la plaza de Munich</h4>
+                                            <p class="card-text">Adolfo Hitmonchan.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- FIN CAROUSEL OBRAS DESTACADAS -->
+
+{% endblock contenido %}
