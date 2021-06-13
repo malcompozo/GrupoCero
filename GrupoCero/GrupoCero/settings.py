@@ -77,10 +77,8 @@ WSGI_APPLICATION = 'GrupoCero.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xepdb1',
-        'USER': 'django',
-        'PASSWORD': 'django',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
