@@ -7,8 +7,6 @@ urlpatterns = [
     path('crear_cuenta/', views.crear_cuenta, name='crear_cuenta'),
     path('detalle_artista/', views.detalle_artista, name='detalle_artista'),
     path('detalle_obra/', views.detalle_obra, name='detalle_obra'),
-    path('detalle_obra/', views.detalle_obra, name='detalle_obra'),
     path('login/', views.login, name='login'),
-    path('obras/', views.obras, name='obras'),
     path('publicacion/', views.publicacion, name='publicacion'),
 ]
