@@ -25,7 +25,7 @@ urlpatterns = [
     # path de contacto
     path('contact/', include('contact.urls')),
     # path de obras
-    path('obras',include('obras.urls'))
+    path('obras/',include('obras.urls'))
 ]
 
 #si esta el debug en marcha
