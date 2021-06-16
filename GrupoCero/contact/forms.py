@@ -9,5 +9,4 @@ class Contact(forms.Form):
             widget= forms.EmailInput(attrs={'class':'form-control'}))
     mensaje = forms.CharField(max_length=300, label='Mensaje', required=True, 
                 widget=forms.Textarea(attrs={'class':'form-control', 'rows': 4}))
-    imagen = forms.ImageField(label='Imagen', required=False)
 

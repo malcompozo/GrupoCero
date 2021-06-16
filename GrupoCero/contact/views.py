@@ -16,12 +16,11 @@ def contacto(request):
             telefono = request.POST.get('telefono')
             email = request.POST.get('email')
             mensaje = request.POST.get('mensaje')
-            imagen = request.POST.get('imagen')
 
             # envio de correo y redireccion
             email = EmailMessage(
                 "Grupo Cero: Nuevo mensaje de contacto", # asunto
-                "De {}, fono: {},correo <{}> \n \n Escribió: \n \n {} \n {}".format(name, telefono, email, mensaje, imagen), # cuerpo del mail
+                "De {}, fono: {},correo <{}> \n \n Escribió: \n \n {} ".format(name, telefono, email, mensaje), # cuerpo del mail
                 "no_contestar@grupocero.cl", # email que emite
                 ["mal.pozo@duocuc.cl"], # email de destino
                 reply_to=[email] # responder al email de forma dinamica
