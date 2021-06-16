@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'contact',
+    'obras',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +79,8 @@ WSGI_APPLICATION = 'GrupoCero.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xepdb1',
-        'USER': 'django',
-        'PASSWORD': 'django',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -128,9 +128,12 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#media config
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # ENVIO AUTOMATICO DE EMAIL
-
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '2440b950374115'
 EMAIL_HOST_PASSWORD = '6b307f7d76fcb5'

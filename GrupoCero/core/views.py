@@ -20,10 +20,6 @@ def detalle_artista(request):
 def detalle_obra(request):
     return render(request,"core/detalle_obra.html")
 
-# obras
-def obras(request):
-    return render(request,"core/obras.html")
-
 # publicacion
 def publicacion(request):
     return render(request,"core/publicacion.html")

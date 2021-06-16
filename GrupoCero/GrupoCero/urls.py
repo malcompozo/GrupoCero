@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
+from django.conf import settings
 
 urlpatterns = [
     
@@ -22,6 +23,12 @@ urlpatterns = [
     # path del core 
     path('', include('core.urls')),
     # path de contacto
-    path('contact/', include('contact.urls'))
+    path('contact/', include('contact.urls')),
+    # path de obras
+    path('obras/',include('obras.urls'))
 ]
 
+#si esta el debug en marcha
+if settings.DEBUG:
+    from django.conf.urls.static import static #importar los ficheros estaticos
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL) # desde la media_url que se encuentra en settings
