@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core',
     'contact',
     'obras',
+    'artista',
 ]
 
 MIDDLEWARE = [
@@ -142,5 +143,5 @@ EMAIL_PORT = '2525'
 
 
 #Auth redirects
-LOGIN_REDIRECT_URL= 'gestion_obras'
+LOGIN_REDIRECT_URL= 'panel'
 LOGOUT_REDIRECT_URL= 'index'
