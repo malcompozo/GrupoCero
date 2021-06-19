@@ -72,7 +72,9 @@
                         <div class="row card-deck">
                             <div class="col-md-4 mb-3">
                                 <div class="card item-obras">
-                                        <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">
+                                {% if obra.imagen %}
+                                    <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
+                                {% endif %}                                      
                                     <div class="card-body">
                                         <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
                                         <p class="card-text">{{obra.anio}}</p>
