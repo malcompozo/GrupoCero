@@ -34,4 +34,4 @@ urlpatterns = [
 #si esta el debug en marcha
 if settings.DEBUG:
     from django.conf.urls.static import static #importar los ficheros estaticos
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL) # desde la media_url que se encuentra en settings
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # desde la media_url que se encuentra en settings

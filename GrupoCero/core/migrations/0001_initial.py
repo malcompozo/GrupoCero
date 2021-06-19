@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('tipo_obra', models.CharField(max_length=20, verbose_name='Tipo de obra')),
                 ('alto', models.CharField(max_length=4, verbose_name='Alto')),
                 ('ancho', models.CharField(max_length=4, verbose_name='Ancho')),
-                ('largo', models.CharField(max_length=4, verbose_name='largo')),
+                ('largo', models.CharField(max_length=4, verbose_name='Largo')),
                 ('soporte', models.CharField(max_length=20, verbose_name='Soporte')),
                 ('descripcion', models.TextField(max_length=250, verbose_name='Descripción')),
                 ('imagen', models.ImageField(upload_to='proyects', verbose_name='Imagen')),

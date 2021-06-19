@@ -24,6 +24,10 @@ def detalle_obra(request):
 def publicacion(request):
     return render(request,"core/publicacion.html")
 
+# login
 def login(request):
     return render(request,"core/login.html")
 
+# gestion_obras
+def gestion_obras(request):
+    return render(request,"core/gestion_obras.html")
