@@ -142,5 +142,5 @@ EMAIL_PORT = '2525'
 
 
 #Auth redirects
-LOGIN_REDIRECT_URL= 'index'
+LOGIN_REDIRECT_URL= 'gestion_obras'
 LOGOUT_REDIRECT_URL= 'index'

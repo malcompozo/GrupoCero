@@ -61,11 +61,11 @@
 
                     <!-- INICIAR SESION -->
                     {% if not request.user.is_authenticated %}
-                    <div data-toggle="tooltip" data-placement="bottom" title="Login / Registro">
-                        <a class="margen" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i></a>
+                    <div data-toggle="tooltip" data-placement="bottom" title="Login">
+                        <a class="margen " href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i></a>
                     {% else %}
                     <div data-toggle="tooltip" data-placement="bottom" title="Salir">
-                        <a class="margen" href="{% url 'logout' %}"><i class="fas fa-sign-in-alt"></i></a>
+                        <a class="margen" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i></a>
                     {% endif %}
                     </div>
                 </div>
