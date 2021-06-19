@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %} {% load static %} {% block contenido %}
+
+<!-- HEADER -->
+<header>
+    <div id="log_img" class="dark-overlay" style="background-image: url('{% static 'core/img/cafe_header.jpg' %}')">
+        <div id="header_text" class="formulario-inicio_sesion">
+            <div>
+                <h1 class="font-weight-bold mb-4">¿Qué quieres hacer?</h1>
+            </div>
+                <div class="col-md-12 mt-4 mb-3">
+                    <button type="submit" class="mar-bot-20 btn btn-danger">Publicar obra</button>
+                </div>
+                <div class="col-md-12 mt-1 mb-3">
+                    <button type="submit" class="mar-bot-20 btn btn-danger">Editar mi perfil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+{% endblock contenido %}

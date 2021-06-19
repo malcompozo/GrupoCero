@@ -31,3 +31,11 @@ def login(request):
 # gestion_obras
 def gestion_obras(request):
     return render(request,"core/gestion_obras.html")
+
+# editar_perfil
+def editar_perfil(request):
+    return render(request,"core/editar_perfil.html")
+
+# panel
+def panel(request):
+    return render(request,"core/panel.html")

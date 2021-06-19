@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %} {% load static %} {% block contenido %}
+
+<!-- PUBLICACION -->
+<div class="container-xl contacto">
+
+    <div class="row justify-content-left">
+        <div class="col-12 col-md-10 col-lg-6">
+            <form id="formulario">
+                <h1>Editar perfil</h1>
+
+                <div id="formulario_nombre">
+                    <label for="nombre">Nombre de artista</label>
+                    <input type="text" class="form-control" id="nombreObra" name="nombreObra" placeholder="Nombre y apellidos">
+                    <p class="input-error">Debe ingresar un nombre válido</p>
+                </div>
+
+                <div id="formulario_nombre">
+                    <label for="pais">País de origen</label>
+                    <input type="text" class="form-control" id="pais" name="pais" placeholder="País">
+                    <p class="input-error">Debe ingresar un país válido</p>
+                </div>
+
+                <div id="formulario_bio">
+                    <label for="biografia">Biografía</label>
+                    <textarea class="form-control" id="desc" name="desc" placeholder="Biografía" rows="7"></textarea>
+                    <p class="input-error">Debe completar biografía</p>
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3" id="formulario_imagen">
+                    <label for="imagenes">Imagenes</label><br>
+                    <input class="archive" aria-labelledby="oOS8J" jsname="jdyrU" name="encoded_image" type="file" jsaction="change:sFeBqf">
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3">
+                    <button type="submit" class="mar-bot-20 btn btn-danger">Aceptar cambios</button>
+                </div>
+
+                <div class="col-md-12 mt-4 mb-3" id="formulario_aviso">
+                    <p class="error-envio"><b>Error:</b> Por favor rellene todos los campos del formulario</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- validaciones -->
+    <script src="{% static 'core/js/validacion-publicacion.js' %}"></script>
+</div>
+
+{% endblock contenido %}
