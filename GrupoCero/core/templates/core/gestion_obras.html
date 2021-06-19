@@ -1,7 +1,10 @@
 {% extends 'core/base.html' %} {% load static %} {% block contenido %}
 <div class="container-xl">
-    <h2 class="mt-5 mb-3">Gestión de obras</h2>
+
     <div class="container col-12">
+        <h2 class="mt-5">Gestión de obras</h2>
+        <button type="submit" class="mt-4 mb-5 btn btn-success"><strong>+ Nueva obra</strong></button>
+
         <table id="gestion-obras-tabla" class="table table-striped table-bordered table-sm" cellspacing="0"
             width="100%">
             <thead class="gestion-obras-encabezado">
