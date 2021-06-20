@@ -23,91 +23,23 @@
 
         <p class="h2 mt-4">Grupo Cero está formado por</p>
 
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (1).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+        {% for artista in artistas %}
+            <div>
+                <div class="media">
+                    <a href="{% url 'detalle_artista' %}">
+                        <img src="{{artista.foto_perfil.url}}" class="media-cover col mr-3" alt="artista">
+                    </a>
+                    <div class="media-body">
+                        <h5 class="mt-0">{{artista.nombre_artista}}</h5>
+                        <p class="text-danger"><strong>12 obras publicadas</strong></p>
+                        <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" />{{artista.pais}}</p>
+                        <p>{{artista.biografia}}</p>
+                    </div>
                 </div>
+                <div class="linea"></div>
             </div>
-            <div class="linea"></div>
-        </div>
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (2).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                </div>
-            </div>
-            <div class="linea"></div>
-        </div>
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (3).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                </div>
-            </div>
-            <div class="linea"></div>
-        </div>
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (4).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                </div>
-            </div>
-            <div class="linea"></div>
-        </div>
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (5).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                </div>
-            </div>
-            <div class="linea"></div>
-        </div>
-        <div>
-            <div class="media">
-                <a href="{% url 'detalle_artista' %}">
-                    <img src="{% static 'core/img/artista (6).jpg' %}" class="media-cover col mr-3" alt="artista">
-                </a>
-                <div class="media-body">
-                    <h5 class="mt-0">Fernando Fernandino Goyunoreguachea</h5>
-                    <p class="text-danger"><strong>12 obras publicadas</strong></p>
-                    <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile</p>
-                    <p>Somos un grupo de artistas que is simply dummy text of the printing and typesetting industry. er since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                </div>
-            </div>
-            <div class="linea"></div>
-        </div>
-
+        {% endfor %}
+    
     </div>
 </div>
 
