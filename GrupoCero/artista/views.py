@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from .models import Artista
+from .models import Artista
 
 # artista
 #def artista(request):
@@ -18,4 +18,5 @@ def artistas(request):
 
 # editar_perfil
 def editar_perfil(request):
-    return render(request,"artista/editar_perfil.html")
+    perfil = Artista.objects.get()
+    return render(request,"core/editar_perfil.html", {'perfil':perfil})
