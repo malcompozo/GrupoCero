@@ -21,15 +21,15 @@ from django.conf import settings
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    # path del core 
-    path('', include('core.urls')),
+    # path de artista
+    path('artista/',include('artista.urls')),
     # path de contacto
     path('contact/', include('contact.urls')),
+    # path del core 
+    path('', include('core.urls')),
     # path de obras
     path('obras/',include('obras.urls')),
-    # path de obras
-    path('artista/',include('artista.urls')),
-    # path de Auth
+    # path de registro
     path('accounts/', include('django.contrib.auth.urls')),
 ]
 

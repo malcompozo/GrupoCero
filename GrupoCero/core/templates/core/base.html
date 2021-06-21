@@ -37,27 +37,29 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item {% if request.path == '/' %} active  {% endif %}">
-                        <a class="nav-link " href="{% url 'index' %}">Inicio</a>
+                        <a class="nav-link font-weight-bold" href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li class="nav-item {% if request.path == '/obras/' %} active {% endif %}">
-                        <a class="nav-link " href="{% url 'obras' %}">Galeria</a>
+                        <a class="nav-link font-weight-bold" href="{% url 'obras' %}">Galeria</a>
                     </li>
                     <li class="nav-item {% if request.path == '/artista/' %} active {% endif %}">
-                        <a class="nav-link " href="{% url 'artistas' %}">Artistas</a>
+                        <a class="nav-link font-weight-bold" href="{% url 'artistas' %}">Artistas</a>
                     </li>
                     <li class="nav-item {% if request.path == '/contact/' %} active {% endif %}">
-                        <a class="nav-link " href="{% url 'contacto' %}">Contacto</a>
+                        <a class="nav-link font-weight-bold" href="{% url 'contacto' %}">Contacto</a>
                     </li>
                 </ul>
 
                 <!-- BUSCAR + LOGIN -->
-                <div class="row">
-
-                    <!-- BUSCAR -->
-                    <form class="d-flex">
-                        <input class="form-control margen" type="search" placeholder="Buscar artista/obra" aria-label="Search">
-                        <button class="btn btn-outline-light margen" type="submit">Buscar</button>
-                    </form>
+                <div class="row ">
+                <!-- SI EL USUARIO ESTA LOGEADO MOSTRARA ESTA OPCIÓN -->
+                    {% if request.user.is_staff %}
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item {% if request.path == '/artista/panel/' %} active {% endif %}">
+                            <a class="nav-link font-weight-bold" href="{% url 'panel' %}">Panel de administración</a>
+                        </li>
+                    </ul>
+                    {% endif %}
 
                     <!-- INICIAR SESION -->
                     {% if not request.user.is_authenticated %}
@@ -67,7 +69,6 @@
                     <div data-toggle="tooltip" data-placement="bottom" title="Salir">
                         <a class="margen" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i></a>
                     {% endif %}
-                    </div>
                 </div>
 
             </div>

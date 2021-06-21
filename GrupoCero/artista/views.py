@@ -3,8 +3,8 @@ from .models import Artista
 
 # artista
 def artistas(request):
-   artista = Artista.objects.all()
-   return render(request,"artista/artistas.html",{'artistas':artista})
+    artista = Artista.objects.all()
+    return render(request,"artista/artistas.html",{'artistas':artista})
 
 # detalle_artista
 def detalle_artista(request):
@@ -22,4 +22,8 @@ def gestion_obras(request):
 # publicacion
 def publicacion(request):
     return render(request,"artista/publicacion.html")
+
+# panel
+def panel(request):
+    return render(request,"artista/panel.html")
 
