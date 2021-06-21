@@ -27,8 +27,6 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     # path del core 
     path('', include('core.urls')),
-    # path de obras
-    path('obras/',include('obras.urls')),
     # path de registro
     path('accounts/', include('django.contrib.auth.urls')),
 ]
