@@ -20,7 +20,7 @@ class Publicacion(models.Model):
     nombre_obra = models.CharField(max_length=40,verbose_name='Nombre de la obra')
     anio = models.CharField(max_length=4, validators=[RegexValidator(r'^\d{1,4}$')],verbose_name='Año')
     precio = models.CharField(max_length=9, validators=[RegexValidator(r'^\d{1,9}$')], verbose_name='Precio ($CLP)')
-    tipo_obra = models.CharField(max_length=20,verbose_name='Tipo de obra')
+    tipo_obra = models.CharField(max_length=100,verbose_name='Tipo de obra')
     alto = models.CharField(max_length=4, validators=[RegexValidator(r'^\d{1,4}$')],verbose_name='Alto (cm)')
     ancho = models.CharField(max_length=4, validators=[RegexValidator(r'^\d{1,4}$')],verbose_name='Ancho (cm)')
     largo = models.CharField(max_length=4,verbose_name='largo (cm)')

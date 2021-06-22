@@ -11,70 +11,65 @@
         console.log(dailyIndicators.dolar.valor);
     });
 </script>
+
 <div>
-    <div class="container-xl cont_fondo_do">
-        <div class="row justify-content-center">
-            <div class="col-8 col-md-4 col-lg-5">
-                <img class="img-fluid" src="{% static 'core/img/escultura_pez.jpg' %}" alt="obra-artista" />
-            </div>
+    {% for obras in obras %}
+        <div class="container-xl cont_fondo_do">
+            <div class="row justify-content-center">
+                <div class="col-8 col-md-4 col-lg-5">
+                    <img class="img-fluid" src="{{obras.imagen.url}}" alt="obra-artista" />
+                </div>
 
-            <div class="col-8 col-md-4 col-lg-5">
-                <h3 class="text-left">Cabeza de Pescao <br />(2019)</h3>
-                <h5 class="text-left pb-2">
-                    Artista: Fernando Fernandino Goyunoreguachea (Brasil)
-                </h5>
-                <p class="p text-left pb-1">
-                    <strong>Tipo de obra:</strong> Original. Edición limitada (#2/5)
-                </p>
-                <p class="p text-left pb-1">
-                    <strong>Técnica:</strong> Escultura en bronce y aluminio forjado
-                </p>
-                <p class="p text-left pb-1">
-                    <strong>Dimensiones:</strong> Alto 45cm; largo 50cm; ancho 25cm
-                </p>
-                <p class="p text-left pb-3"><strong>Soporte:</strong> Piedra</p>
+                <div class="col-8 col-md-4 col-lg-5">
+                    <h3 class="text-left">{{obras.nombre_obra}}<br />{{obras.anio}}</h3>
+                    <h5 class="text-left pb-2">
+                        Artista: {{obras.autor}} ({{obras.pais}})
+                    </h5>
+                    <p class="p text-left pb-1">
+                        <strong>Tipo de obra:</strong> {{obras.tipo_obra}}
+                    </p>
+                    <p class="p text-left pb-1">
+                        <strong>Dimensiones:</strong> Alto {{obras.alto}}; largo {{obras.largo}}; ancho {{obras.ancho}}
+                    </p>
+                    <p class="p text-left pb-3"><strong>Soporte:</strong>{{obras.soporte}}</p>
 
-                <!-- Inicio de sección precios con API -->
+                    <!-- Inicio de sección precios con API -->
 
-                <h4 class="p text-left pb-4">$<span id="valor-peso">379000</span> (disponible)</h4>
+                    <h4 class="p text-left pb-4">clp $<span id="valor-peso">{{obras.precio}}</span></h4>
 
-                <h5 class="p text-left pb-4">US$<span id="valor-dolar"></span> dólares (disponible)</h5>
+                    <h5 class="p text-left pb-4">usd $<span id="valor-dolar"></span> dólares</h5>
 
-                <!-- Fin de sección de precios con API -->
-
-                <button type="button" class="btn primario text-white mt-2">
-              Haz una pregunta >>
-            </button>
+                    <!-- Fin de sección de precios con API -->
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container-xl detalle">
-        <div>
+        <div class="container-xl detalle">
+            <div>
+                <div class="linea"></div>
+
+                <h4>Acerca de esta obra</h4>
+                <p class="p text-left pt-4">
+                    {{publicacion.descripcion}}
+                </p>
+                
+            </div>
             <div class="linea"></div>
+            <div class="row">
+                <div class="col-8 col-md-4 col-lg-2">
+                    <img class="img-fluid img mx-auto d-block" src="{% static 'core/img/fernand_fernandinho_fifofalfa.jpg' %}" alt="artistas" />
+                </div>
+                <div class="col-8 col-md-4 col-lg-2">
+                    <h5 class="text-lg-left">Fernando Fernandino Goyunoreguachea</h5>
+                    <p>
+                        <img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile
+                    </p>
+                </div>
+            </div>
+            <div class="linea"></div>
+        </div>
+    {% endfor %}
 
-            <h4>Acerca de esta obra</h4>
-            <p class="p text-left pt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corrupti quae deserunt qui totam unde mollitia praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis dignissimos labore.
-            </p>
-            <p class="p text-left pt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corrupti quae deserunt qui totam unde mollitia praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis dignissimos labore.
-            </p>
-        </div>
-        <div class="linea"></div>
-        <div class="row">
-            <div class="col-8 col-md-4 col-lg-2">
-                <img class="img-fluid img mx-auto d-block" src="{% static 'core/img/fernand_fernandinho_fifofalfa.jpg' %}" alt="artistas" />
-            </div>
-            <div class="col-8 col-md-4 col-lg-2">
-                <h5 class="text-lg-left">Fernando Fernandino Goyunoreguachea</h5>
-                <p>
-                    <img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile
-                </p>
-            </div>
-        </div>
-        <div class="linea"></div>
-    </div>
 
     <!-- CARD SLICE -->
     <div class="container-xl card_slice_detalleobra">

@@ -9,14 +9,7 @@ var validaNombre = function() {
             return false;
         }
     }
-    // var validaApellido = function(){
-    //     var ape = document.getElementById("apellidoP").value;
-    //     if(ape.length>0){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
+    
 var validarTelefono = function() {
     var tel = document.getElementById("Telefono").value;
     if (tel.length == 9) {
