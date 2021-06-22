@@ -5,38 +5,35 @@
 
     <div class="row justify-content-left">
         <div class="col-12 col-md-10 col-lg-6">
-            <form id="formulario">
+            {% if 'ok' in request.GET %}
+                <p><b>Perfil agregado exitosamente.</b></p>
+            {% endif %}
+            <form method="POST" id="formulario">
+                {% csrf_token %}
                 <h1>Editar perfil</h1>
-
-                <div id="formulario_nombre">
+                
+                <div class="form-group">
                     <label for="nombre">Nombre de artista</label>
-                    <input type="text" class="form-control" id="nombreObra" name="nombreObra" placeholder="Nombre y apellidos">
-                    <p class="input-error">Debe ingresar un nombre válido</p>
+                    <div>{{edit.nombre_artista}}</div>
                 </div>
 
-                <div id="formulario_nombre">
+                <div class="form-group">
                     <label for="pais">País de origen</label>
-                    <input type="text" class="form-control" id="pais" name="pais" placeholder="País">
-                    <p class="input-error">Debe ingresar un país válido</p>
+                    <div>{{edit.pais}}</div>
                 </div>
 
-                <div id="formulario_bio">
+                <div class="form-group">
                     <label for="biografia">Biografía</label>
-                    <textarea class="form-control" id="desc" name="desc" placeholder="Biografía" rows="7"></textarea>
-                    <p class="input-error">Debe completar biografía</p>
+                    <div>{{edit.biografia}}</div>
                 </div>
 
-                <div class="col-md-12 mt-4 mb-3" id="formulario_imagen">
+                <div class="form-group">
                     <label for="imagenes">Imagenes</label><br>
-                    <input class="archive" aria-labelledby="oOS8J" jsname="jdyrU" name="encoded_image" type="file" jsaction="change:sFeBqf">
+                    <div>{{edit.foto_perfil}}</div>
                 </div>
 
                 <div class="col-md-12 mt-4 mb-3">
-                    <button type="submit" class="mar-bot-20 btn btn-danger">Aceptar cambios</button>
-                </div>
-
-                <div class="col-md-12 mt-4 mb-3" id="formulario_aviso">
-                    <p class="error-envio"><b>Error:</b> Por favor rellene todos los campos del formulario</p>
+                    <input type="submit" class="btn btn-danger" values="Enviar">
                 </div>
 
             </form>
