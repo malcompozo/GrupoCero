@@ -18,93 +18,24 @@
     </div>
     <div class="linea-blanca"></div>
 </div>
-
-
-<section>
-    <div class="container-xl">
-
-        <div class="container-xl justify-content-center  mt-5 mb-3">
-            <div class="row">
-                <div class="col-6">
-                    <h2 class="float-left ">
-                        Obras en exhibición
-                    </h2>
-                </div>
-
-                <div class="col-4 text-right">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Ordenar por
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Artista</a>
-                            <a class="dropdown-item" href="#">Fecha</a>
-                            <a class="dropdown-item" href="#">Técnica</a>
+<div class="row justify-content-center">
+    {% for obra in obras %}
+        <div class="col-8 col-md-4 mt-5 mb-5">
+            <div class="row p-1 justify-content-center">
+                <div class="col-md-12 card-deck">
+                    <div class="card item-obras">
+                        {% if obra.imagen %}
+                            <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
+                        {% endif %}                                      
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
+                            <p class="card-text">{{obra.anio}}</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-2">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
         </div>
-
-        {% for obra in obras %}
-            <section class="body-obras">
-                <div class="obras">
-                        <div class="row card-deck">
-                            <div class="col-md-4 mb-3">
-                                <div class="card item-obras">
-                                {% if obra.imagen %}
-                                    <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
-                                {% endif %}                                      
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
-                                        <p class="card-text">{{obra.anio}}</p>
-                                        <h6></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </section>
-        {% endfor %}
-        <div class="container-xl justify-content-center"></div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pb-4 ">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</section>
+    {% endfor %}
+</div>
 
 {% endblock contenido %}
