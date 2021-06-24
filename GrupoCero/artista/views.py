@@ -36,29 +36,39 @@ def panel(request):
 
 # ingresar perfil
 def editar_perfil(request):
+
+    data = {
+        'editForm': EditarForm()
+    }
+
     if request.method == 'POST':
-        edit = EditarForm(request.POST)
-        if edit.is_valid():
-            edit.save()
-            return redirect('panel')
+        editar = EditarForm(data=request.POST, files=request.FILES)
+        if editar.is_valid():
+            editar.save()
+            data['mensaje'] = "Guardado correctamente"
             
-    else:
-        edit = EditarForm()
+        else:
+            data[EditarForm] = editar
     
-    return render(request,"artista/editar_perfil.html", {'edit':edit})
+    return render(request,"artista/editar_perfil.html", data)
 
 # ingresar publicacion
 def publicacion(request):
+
+    data = {
+        'publiForm': PubliForm()
+    }
+
     if request.method == 'POST':
-        publi = PubliForm(request.POST)
-        if publi.is_valid():
-            publi.save()
-            return redirect('panel')
+        publicacion = PubliForm(data=request.POST, files=request.FILES)
+        if publicacion.is_valid():
+            publicacion.save()
+            data['mensaje'] = "Guardado correctamente"
             
-    else:
-        publi = PubliForm()
+        else:
+            data[PubliForm] = publicacion
     
-    return render(request,"artista/publicacion.html", {'publi':publi})
+    return render(request,"artista/publicacion.html", data)
 
 # ELIMINAR
 def eliminar(request, publicacion_id):
