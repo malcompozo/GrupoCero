@@ -5,81 +5,22 @@
 
     <div class="row justify-content-left">
         <div class="col-12 col-md-10 col-lg-6">
-            <form method="POST" id="formulario">
+            <form action="" method="post" id="formulario" enctype="multipart/form-data">
                 {% csrf_token %}
                 <h1>Publicar una obra</h1>
 
-                <div class="form-group" id="formulario_nombre">
-                    <label for="nombre">Nombre de la obra</label>
-                    <div>{{publi.nombre_obra}}</div>
-                    <p class="input-error">Debe completar el campo con el nombre de la obra</p>
-                </div>
-
-                <div class="form-group" id="formulario_fecha">
-                    <label for="fecha">Año</label>
-                    <div>{{publi.anio}}</div>
-                    <p class="input-error">Debe completar el campo con el año de la obra ( 4 digitos )</p>
-                </div>
-
-                <div class="form-group" id="formulario_precio">
-                    <label for="valor">Precio (en pesos chilenos)</label>
-                    <div>{{publi.precio}}</div>
-                    <p class="input-error">Debe completar el campo con el precio</p>
-                </div>
-
-                <div class="form-group" id="formulario_tipo">
-                    <label for="tipo-obra">Tipo de obra</label>
-                    <div>{{publi.tipo_obra}}</div>
-                    <p class="input-error">Debe completar el campo con el tipo de obra</p>
-                </div>
-
-                <div class="form-group" id="formulario_dim">
-                    <label for="dimensiones">Dimensiones (en centimetros)</label>
-                        <div>
-                            <label for="">Alto</label>
-                            {{publi.alto}}
-                        </div>
-                        <div>
-                            <label for="">Ancho</label>
-                            {{publi.ancho}}
-                        </div>
-                        <div>
-                            <label for="">Largo</label>
-                            {{publi.largo}}
-                        </div>
-                        <p class="input-error">Debe completar el alto, ancho y largo de la obra</p>
-                </div>
-
-                <div class="form-group" id="formulario_soporte">
-                    <label for="soporte">Soporte (si aplica)</label>
-                    <div>{{publi.soporte}}</div>
-                    <p class="input-error">Debe completar el campo con el tipo de soporte</p>
-                </div>
-
-                <div class="form-group" id="formulario_desc">
-                    <label for="descripcion">Descripción</label>
-                    <div>{{publi.descripcion}}</div>
-                    <p class="input-error">Debe completar el campo con una descripción</p>
-                </div>
-
-                <div class="form-group" class="col-md-12 mt-4 mb-3" id="formulario_imagen">
-                    <label for="imagenes">Imagenes</label><br>
-                    <div>{{publi.imagen}}</div>
-                </div>
+                {{ publiForm }}
 
                 <div class="col-md-12 mt-4 mb-3">
-                    <button type="submit" class="mar-bot-20 btn btn-danger">Publicar obra</button>
-                </div>
-
-                <div class="col-md-12 mt-4 mb-3" id="formulario_aviso">
-                    <p class="error-envio"><b>Error:</b> Por favor rellene todos los campos del formulario</p>
+                    <input type="submit" value="Publicar" class="mar-bot-20 btn btn-danger"/>
                 </div>
 
             </form>
+            {{mensaje}}
         </div>
     </div>
     <!-- validaciones -->
-    <script src="{% static 'core/js/validacion-publicacion.js' %}"></script>
+    <!-- <script src="{% static 'core/js/validacion-publicacion.js' %}"></script> -->
 </div>
 
 {% endblock contenido %}
