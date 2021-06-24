@@ -3,8 +3,9 @@
 
     <div class="container col-12">
         <h2 class="mt-5">Gestión de obras</h2>
-        <button type="submit" class="mt-4 mb-5 btn btn-success"><strong>+ Nueva obra</strong></button>
-
+        <div class="intro-button mx-auto">
+            <a class="btn btn-success btn-xl mb-3" href="{% url 'publicacion' %}">Nueva obra</a>
+        </div>
         <table id="gestion-obras-tabla" class="table table-striped table-bordered table-sm" cellspacing="0"
             width="100%">
             <thead class="gestion-obras-encabezado">
@@ -23,6 +24,7 @@
                 </tr>
             </thead>
             <tbody>
+            {% for obras in obras %}
                 <tr class="gestion-obras-fila">
                     <td>
                         <div class="btn-group">
@@ -31,42 +33,27 @@
                                 Acción
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Ver</a>
-                                <a class="dropdown-item" href="">Editar</a>
-                                <a class="dropdown-item text-danger" href="">Eliminar</a>
+                                <a class="dropdown-item" href="{% url 'editar' obras.id %}">Editar</a>
+                                <a class="dropdown-item text-danger" href="{% url 'eliminar' obras.id %}">Eliminar</a>
                             </div>
                         </div>
                     </td>
-                    {% for obra in obras %}
-                        <td> <img src="{{obra.imagen.url}}" alt="" style="max-height:50px;"></td>
-                        <td>{{obra.nombre_obra}}</td>
-                        <td>{{obra.anio}}</td>
-                        <td>{{obra.precio}}</td>
-                        <td>{{obra.tipo_obra}}</td>
-                        <td>{{obra.alto}}</td>
-                        <td>{{obra.ancho}}</td>
-                        <td>{{obra.largo}}</td>
-                        <td>{{obra.soporte}}</td>
-                        <td>{{obra.descripcion}}</td>
-                    {% endfor %}
                     
+                        <td> <img src="{{obras.imagen.url}}" alt="" style="max-height:50px;"></td>
+                        <td>{{obras.nombre_obra}}</td>
+                        <td>{{obras.anio}}</td>
+                        <td>{{obras.precio}}</td>
+                        <td>{{obras.tipo_obra}}</td>
+                        <td>{{obras.alto}}</td>
+                        <td>{{obras.ancho}}</td>
+                        <td>{{obras.largo}}</td>
+                        <td>{{obras.soporte}}</td>
+                        <td>{{obras.descripcion}}</td>
                 </tr>
-
+            {% endfor %}
             </tbody>
         </table>
     </div>
 </div>
-
-
-<script>
-    // Paginador 
-    $(document).ready(function () {
-        $('#gestion-obras-tabla').DataTable({
-            "pagingType": "full" // "simple" option for 'Previous' and 'Next' buttons only
-        });
-        $('.dataTables_length').addClass('bs-select');
-    });
-</script>
-
 
 {% endblock contenido %}

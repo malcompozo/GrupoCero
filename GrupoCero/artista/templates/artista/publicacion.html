@@ -9,7 +9,55 @@
                 {% csrf_token %}
                 <h1>Publicar una obra</h1>
 
-                {{ publiForm }}
+                <div class="form-group">
+                    <label for="nombre_obra">Nombre Obra</label>
+                    <div>{{publiForm.nombre_obra}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="anio">Año</label>
+                    <div>{{publiForm.anio}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio (clp)</label>
+                    <div>{{publiForm.precio}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo_obra">Tipo de obra</label>
+                    <div>{{publiForm.tipo_obra}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alto">Alto</label><br>
+                    <div>{{publiForm.alto}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ancho">Ancho</label><br>
+                    <div>{{publiForm.ancho}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="largo">Largo</label><br>
+                    <div>{{publiForm.largo}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="soporte">Soporte</label><br>
+                    <div>{{publiForm.soporte}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label><br>
+                    <div>{{publiForm.descripcion}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagen">Imagen</label><br>
+                    <div>{{publiForm.imagen}}</div>
+                </div>
 
                 <div class="col-md-12 mt-4 mb-3">
                     <input type="submit" value="Publicar" class="mar-bot-20 btn btn-danger"/>
@@ -19,8 +67,7 @@
             {{mensaje}}
         </div>
     </div>
-    <!-- validaciones -->
-    <!-- <script src="{% static 'core/js/validacion-publicacion.js' %}"></script> -->
+
 </div>
 
 {% endblock contenido %}

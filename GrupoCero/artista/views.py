@@ -5,13 +5,17 @@ from .forms import EditarForm, PubliForm
 # listando artista
 def artistas(request):
     artista = EditarPerfil.objects.all()
-    return render(request,"artista/artistas.html",{'artistas':artista})
+    return render(request,"artista/artistas.html",{'artista':artista})
 
 # listando obras
 def obras(request):
     obras = Publicacion.objects.all()
     return render(request,"artista/obras.html",{'obras':obras})
 
+# listando obras en gestion obras
+def gestion_obras(request):
+    obras = Publicacion.objects.all()
+    return render(request,"artista/gestion_obras.html",{'obras':obras})
 
 
 
@@ -23,18 +27,15 @@ def detalle_artista(request):
 def detalle_obra(request):
     return render(request,"artista/detalle_obra.html")
 
-# gestion obras
-def gestion_obras(request):
-    return render(request,"artista/gestion_obras.html")
-
 # panel
 def panel(request):
     return render(request,"artista/panel.html")
 
 
 
+# CRUD
 
-# ingresar perfil
+# AGREGAR PERFIL
 def editar_perfil(request):
 
     data = {
@@ -52,7 +53,7 @@ def editar_perfil(request):
     
     return render(request,"artista/editar_perfil.html", data)
 
-# ingresar publicacion
+# AGREGAR PUBLICACION
 def publicacion(request):
 
     data = {
@@ -86,5 +87,5 @@ def editar(request, publicacion_id):
             return redirect('panel')
     else:
         form = PubliForm(instance=editar) 
-    return render(request,"artista/publicacion.html", {'editar':editar})
+    return render(request,"artista/editar.html", {'form':form})
 

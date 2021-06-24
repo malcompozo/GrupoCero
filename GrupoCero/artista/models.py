@@ -24,7 +24,7 @@ class Publicacion(models.Model):
     alto = models.CharField(max_length=4, validators=[RegexValidator(r'^\d{1,4}$')],verbose_name='Alto (cm)')
     ancho = models.CharField(max_length=4, validators=[RegexValidator(r'^\d{1,4}$')],verbose_name='Ancho (cm)')
     largo = models.CharField(max_length=4,verbose_name='largo (cm)')
-    soporte = models.CharField(max_length=20,verbose_name='Soporte',null=True,blank=True)
+    soporte = models.CharField(max_length=20,verbose_name='Soporte (opcional)',null=True,blank=True)
     descripcion = models.TextField(max_length=250,verbose_name='Descripción')
     imagen = models.ImageField(verbose_name='Imagen', upload_to = 'obras')
 
