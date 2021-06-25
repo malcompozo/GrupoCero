@@ -26,7 +26,7 @@
         {% for artista in artista %}
             <div>
                 <div class="media">
-                    <a href="{% url 'detalle_artista' %}">
+                    <a href="{% url 'detalle_artista' artista.id %}">
                         <img src="{{artista.foto_perfil.url}}" class="media-cover col mr-3" alt="artista">
                     </a>
                     <div class="media-body">
