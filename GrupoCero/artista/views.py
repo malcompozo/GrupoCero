@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import EditarPerfil,Publicacion
 from .forms import EditarForm, PubliForm
+from django.urls import reverse
 
 # listando artista
 def artistas(request):
@@ -46,10 +47,11 @@ def editar_perfil(request):
         editar = EditarForm(data=request.POST, files=request.FILES)
         if editar.is_valid():
             editar.save()
-            data['mensaje'] = "Guardado correctamente"
+            return redirect(reverse('editar_perfil')+"?ok")
             
         else:
             data[EditarForm] = editar
+            return redirect(reverse('editar_perfil')+"?fail")
     
     return render(request,"artista/editar_perfil.html", data)
 
@@ -64,11 +66,12 @@ def publicacion(request):
         publicacion = PubliForm(data=request.POST, files=request.FILES)
         if publicacion.is_valid():
             publicacion.save()
-            data['mensaje'] = "Guardado correctamente"
+            return redirect(reverse('publicacion')+"?ok")
             
         else:
             data[PubliForm] = publicacion
-    
+            return redirect(reverse('publicacion')+"?fail")
+        
     return render(request,"artista/publicacion.html", data)
 
 # ELIMINAR
