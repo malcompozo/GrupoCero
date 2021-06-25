@@ -23,6 +23,8 @@
         <div class="col-8 col-md-4 mt-5 mb-5">
             <div class="row p-1 justify-content-center">
                 <div class="col-md-12 card-deck">
+                    <a href="{% url 'detalle_obra' %}">
+
                     <div class="card item-obras">
                         {% if obra.imagen %}
                             <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
@@ -32,6 +34,7 @@
                             <p class="card-text">{{obra.anio}}</p>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
