@@ -21,8 +21,10 @@ def gestion_obras(request):
 
 
 # detalle_artista
-def detalle_artista(request):
-    return render(request,"artista/detalle_artista.html")
+def detalle_artista(request, artista_id):
+    artista = EditarPerfil.objects.get(id=artista_id)
+
+    return render(request,"artista/detalle_artista.html", {'artista': artista})
 
 # detalle_obra
 def detalle_obra(request):
