@@ -7,8 +7,6 @@
 - Jonathan Pacheco
 - Malcom Pozo
 
-### Versión en línea https://lloni.github.io/ColectivoGrupoCero/
-
 ### Mockup https://www.figma.com/file/YTjEC09Ws9IZYppsA9QzQ1/CGC?node-id=2%3A17231
 
 _______________________
