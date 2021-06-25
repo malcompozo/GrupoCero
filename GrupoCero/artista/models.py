@@ -5,6 +5,7 @@ from django.core.validators import RegexValidator
 
 class EditarPerfil(models.Model):
     nombre_artista = models.CharField(max_length=80, verbose_name='Nombre del artista')
+    rut_artista = models.CharField(primary_key=True,max_length=9, verbose_name='Rut (sin puntos ni guion)')
     pais = models.CharField(max_length=20, verbose_name='País')
     biografia = models.TextField(max_length=250, verbose_name='Biografía')
     foto_perfil = models.ImageField(verbose_name='Foto de perfil', upload_to = 'artistas')
@@ -27,6 +28,7 @@ class Publicacion(models.Model):
     soporte = models.CharField(max_length=20,verbose_name='Soporte (opcional)',null=True,blank=True)
     descripcion = models.TextField(max_length=250,verbose_name='Descripción')
     imagen = models.ImageField(verbose_name='Imagen', upload_to = 'obras')
+    autor = models.ForeignKey(EditarPerfil, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Obra"
