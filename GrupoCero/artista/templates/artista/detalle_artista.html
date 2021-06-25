@@ -1,5 +1,8 @@
 {% extends 'core/base.html' %} {% load static %} {% block contenido %}
 
+{% for artista in artista %}
+
+
 <!-- ARTISTA -->
 <div class=" container-xl detalle-artista">
 
@@ -7,22 +10,21 @@
     <div class="row justify-content-center">
 
         <div class="col-8 col-md-4 col-lg-5">
-            <p class="h2 font-weight-bold"> Fernand Fernandino Fifofalfa </p>
+            <p class="h2 font-weight-bold"> {{artista.nombre_artista}} </p>
             <div>
-                <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar">Chile</p>
+                <p><img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar">{{artista.pais}}</p>
             </div>
             <p class="p text-left pt-4">
-                <i> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, corrupti quae deserunt qui totam unde mollitia    praesentium reprehenderit laudantium ducimus ab atque recusandae aliquam suscipit accusamus neque omnis dignissimos labore.
-                    </i>
+                <i>{{artista.biografia}}</i>
             </p>
         </div>
         <div class="col-8 col-md-4 col-lg-5 ">
-            <img class="img-fluid img mx-auto d-block" src="{% static 'core/img/fernand_fernandinho_fifofalfa.jpg' %}" alt="artistas">
+            <img class="img-fluid img mx-auto d-block" src="{{artista.foto_perfil.url}}" alt="artistas">
         </div>
     </div>
 </div>
 
+{% endfor %}
 
 <!-- CAROUSEL OBRAS DESTACADAS -->
 <section class="pt-5 pb-5 container-xl artistas_slice">

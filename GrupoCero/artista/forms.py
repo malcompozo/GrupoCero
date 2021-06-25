@@ -9,6 +9,7 @@ class EditarForm(forms.ModelForm):
 
         widgets = {
             'nombre_artista': forms.TextInput(attrs={'class':'form-control'}),
+            'rut_artista': forms.TextInput(attrs={'class':'form-control'}),
             'pais': forms.TextInput(attrs={'class':'form-control'}),
             'biografia': forms.Textarea(attrs={'class':'form-control'}),
         }
