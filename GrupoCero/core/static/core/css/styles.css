@@ -365,7 +365,6 @@ footer ul a {
     padding-bottom: 40px;
 }
 
-
 /*   Obras   */
 
 .colorhr {
@@ -407,24 +406,6 @@ footer ul a {
     transition: all 300ms;
     position: relative;
 }
-
-/* .item-obras::after {
-    content: "";
-    background-color: rgba(179, 229, 252, .1);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scale(0);
-    transition: all 300ms;
-    opacity: 0;
-} */
-
-/* .item-obras:hover:after {
-    opacity: 1;
-    transform: scale(1);
-} */
 
 .item-obras:hover {
     transform: scale(1.05);

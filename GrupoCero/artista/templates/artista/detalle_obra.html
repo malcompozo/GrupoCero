@@ -13,7 +13,7 @@
 </script>
 
 <div>
-    {% for obras in obras %}
+    
         <div class="container-xl cont_fondo_do">
             <div class="row justify-content-center">
                 <div class="col-8 col-md-4 col-lg-5">
@@ -23,7 +23,7 @@
                 <div class="col-8 col-md-4 col-lg-5">
                     <h3 class="text-left">{{obras.nombre_obra}}<br />{{obras.anio}}</h3>
                     <h5 class="text-left pb-2">
-                        Artista: {{obras.autor}} ({{obras.pais}})
+                        Artista: ({{obras.pais}})
                     </h5>
                     <p class="p text-left pb-1">
                         <strong>Tipo de obra:</strong> {{obras.tipo_obra}}
@@ -45,22 +45,13 @@
         </div>
 
         <div class="container-xl detalle">
-            <div>
-                <div class="linea"></div>
-
-                <h4>Acerca de esta obra</h4>
-                <p class="p text-left pt-4">
-                    {{publicacion.descripcion}}
-                </p>
-                
-            </div>
             <div class="linea"></div>
             <div class="row">
                 <div class="col-8 col-md-4 col-lg-2">
                     <img class="img-fluid img mx-auto d-block" src="{% static 'core/img/fernand_fernandinho_fifofalfa.jpg' %}" alt="artistas" />
                 </div>
                 <div class="col-8 col-md-4 col-lg-2">
-                    <h5 class="text-lg-left">Fernando Fernandino Goyunoreguachea</h5>
+                    <h5 class="text-lg-left"></h5>
                     <p>
                         <img class="align-top" width="18" src="{% static 'core/img/posicion.svg' %}" alt="lugar" /> Brasil. Chile
                     </p>
@@ -68,10 +59,34 @@
             </div>
             <div class="linea"></div>
         </div>
-    {% endfor %}
+    
 
 
     <!-- CARD SLICE -->
+
+    <div class="row justify-content-center">
+        {% for obra in obras %}
+            <div class="col-8 col-md-4 mt-5 mb-5">
+                <div class="row p-1 justify-content-center">
+                    <div class="col-md-12 card-deck">
+                        <div class="card item-obras">
+                            {% if obra.imagen %}
+                                <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
+                            {% endif %}                                      
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
+                                <p class="card-text">{{obra.anio}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% comment "" %}
+
+
     <div class="container-xl card_slice_detalleobra">
         <h2 class="text-lg-left mb-5 ml-5">Obras relacionadas</h2>
         <div class="row align-content-center text-lg-center">
@@ -104,5 +119,7 @@
             </div>
         </div>
     </div>
+{% endcomment %}
 </div>
+
 {% endblock contenido %}
