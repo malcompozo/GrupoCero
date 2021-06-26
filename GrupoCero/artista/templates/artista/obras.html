@@ -23,14 +23,14 @@
         <div class="col-8 col-md-4 mt-5 mb-5">
             <div class="row p-1 justify-content-center">
                 <div class="col-md-12 card-deck">
-                    <a href="{% url 'detalle_obra' %}">
+                    <a href="{% url 'detalle_obra' obra.id %}">
 
                     <div class="card item-obras">
                         {% if obra.imagen %}
                             <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
                         {% endif %}                                      
                         <div class="card-body">
-                            <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
+                            <h4 class="card-title"><a href="{% url 'detalle_obra' obra.id %}">{{obra.nombre_obra}}</a></h4>
                             <p class="card-text">{{obra.anio}}</p>
                         </div>
                     </div>
