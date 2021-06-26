@@ -23,10 +23,12 @@ def gestion_obras(request):
 # detalle_artista
 def detalle_artista(request, artista_id):
     artista = EditarPerfil.objects.get(rut_artista=artista_id)
-    return render(request,"artista/detalle_artista.html", {'artista': artista})
+    obras = Publicacion.objects.all().filter(autor_id=artista_id)
+    return render(request,"artista/detalle_artista.html", {'artista': artista, 'obras':obras})
 
 # detalle_obra
 def detalle_obra(request):
+    obra = Publicacion.objects.all()
     return render(request,"artista/detalle_obra.html")
 
 # panel

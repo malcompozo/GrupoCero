@@ -23,6 +23,29 @@
 
 
 <!-- CAROUSEL OBRAS DESTACADAS -->
+
+
+<div class="row justify-content-center">
+    {% for obra in obras %}
+        <div class="col-8 col-md-4 mt-5 mb-5">
+            <div class="row p-1 justify-content-center">
+                <div class="col-md-12 card-deck">
+                    <div class="card item-obras">
+                        {% if obra.imagen %}
+                            <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
+                        {% endif %}                                      
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
+                            <p class="card-text">{{obra.anio}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% comment "" %}
 <section class="pt-5 pb-5 container-xl artistas_slice">
     <div class="container">
         <div class="row">
@@ -180,4 +203,5 @@
             </div>
         </div>
 </section>
+{% endcomment %}
 {% endblock contenido %}
