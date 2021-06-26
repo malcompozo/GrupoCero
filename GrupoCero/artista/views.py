@@ -27,9 +27,9 @@ def detalle_artista(request, artista_id):
     return render(request,"artista/detalle_artista.html", {'artista': artista, 'obras':obras})
 
 # detalle_obra
-def detalle_obra(request):
-    obra = Publicacion.objects.all()
-    return render(request,"artista/detalle_obra.html")
+def detalle_obra(request, publi_id):
+    obras = Publicacion.objects.get(id=publi_id)
+    return render(request,"artista/detalle_obra.html", {'obras':obras})
 
 # panel
 def panel(request):

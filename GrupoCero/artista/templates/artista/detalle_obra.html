@@ -6,7 +6,7 @@
     $.getJSON('https://mindicador.cl/api', function(dailyIndicators) {
         $("<span/>", {
             html: (document.getElementById('valor-peso').innerHTML / dailyIndicators.dolar.valor).toFixed(2)
-        }).coreendTo(document.getElementById('valor-dolar'));
+        }).appendTo(document.getElementById('valor-dolar'));
         console.log(dailyIndicators);
         console.log(dailyIndicators.dolar.valor);
     });
@@ -65,23 +65,23 @@
     <!-- CARD SLICE -->
 
     <div class="row justify-content-center">
-        {% for obra in obras %}
+
             <div class="col-8 col-md-4 mt-5 mb-5">
                 <div class="row p-1 justify-content-center">
                     <div class="col-md-12 card-deck">
                         <div class="card item-obras">
-                            {% if obra.imagen %}
-                                <img class="img-fluid card-cover" src="{{obra.imagen.url}}" alt="">                       
+                            {% if obras.imagen %}
+                                <img class="img-fluid card-cover" src="{{obras.imagen.url}}" alt="">                       
                             {% endif %}                                      
                             <div class="card-body">
-                                <h4 class="card-title"><a href="{% url 'detalle_obra' %}">{{obra.nombre_obra}}</a></h4>
-                                <p class="card-text">{{obra.anio}}</p>
+                                <h4 class="card-title"><a href="{% url 'detalle_obra' obras.id%}">{{obras.nombre_obra}}</a></h4>
+                                <p class="card-text">{{obras.anio}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        {% endfor %}
+
     </div>
 
 {% comment "" %}
