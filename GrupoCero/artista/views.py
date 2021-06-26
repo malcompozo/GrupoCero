@@ -29,6 +29,7 @@ def detalle_artista(request, artista_id):
 # detalle_obra
 def detalle_obra(request, publi_id):
     obras = Publicacion.objects.get(id=publi_id)
+
     return render(request,"artista/detalle_obra.html", {'obras':obras})
 
 # panel
