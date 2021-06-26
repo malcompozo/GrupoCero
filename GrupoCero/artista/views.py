@@ -91,8 +91,9 @@ def editar(request, publicacion_id):
         form = PubliForm(request.POST, instance=editar)
         if form.is_valid():
             form.save()
-            return redirect('panel')
+            return redirect(reverse('gestion_obras')+"?ok")
     else:
-        form = PubliForm(instance=editar) 
+        form = PubliForm(instance=editar)
+    
     return render(request,"artista/editar.html", {'form':form})
 

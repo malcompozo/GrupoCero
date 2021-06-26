@@ -5,9 +5,19 @@
 
     <div class="row justify-content-left">
         <div class="col-12 col-md-10 col-lg-6">
+            {% if 'ok' in request.GET %}
+                <p><b> Su obra se ha enviado correctamente </b></p>
+            {% elif 'fail' in request.GET %}
+                <p><b>Oh, a ocurrido un problema.</b></p>
+            {% endif %}
             <form action="" method="post" id="formulario" enctype="multipart/form-data">
                 {% csrf_token %}
                 <h1>Editar obra</h1>
+
+                <div class="form-group">
+                    <label for="autor">Autor de la obra</label>
+                    <div>{{form.autor}}</div>
+                </div>
 
                 <div class="form-group">
                     <label for="nombre_obra">Nombre Obra</label>
