@@ -3,6 +3,11 @@
 
     <div class="container col-12">
         <h2 class="mt-5">Gestión de obras</h2>
+        {% if 'ok' in request.GET %}
+                <p><b> Su obra se ha actualizado correctamente </b></p>
+            {% elif 'fail' in request.GET %}
+                <p><b>Oh, a ocurrido un problema.</b></p>
+            {% endif %}
         <div class="intro-button mx-auto">
             <a class="btn btn-success btn-xl mb-3" href="{% url 'publicacion' %}">Nueva obra</a>
         </div>
