@@ -29,6 +29,8 @@ urlpatterns = [
     path('', include('core.urls')),
     # path de registro
     path('accounts/', include('django.contrib.auth.urls')),
+    # path de api
+    path('api/', include('rest_obra.urls')),
 ]
 
 #si esta el debug en marcha
