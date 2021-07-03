@@ -97,3 +97,4 @@ def editar(request, publicacion_id):
     
     return render(request,"artista/editar.html", {'form':form})
 
+
