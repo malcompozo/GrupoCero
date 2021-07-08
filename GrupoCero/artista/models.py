@@ -27,7 +27,7 @@ class Publicacion(models.Model):
     largo = models.CharField(max_length=4,verbose_name='largo (cm)')
     soporte = models.CharField(max_length=20,verbose_name='Soporte (opcional)',null=True,blank=True)
     descripcion = models.TextField(max_length=250,verbose_name='Descripción')
-    imagen = models.ImageField(verbose_name='Imagen', upload_to = 'obras')
+    imagen = models.ImageField(verbose_name='Imagen', upload_to = 'obras',null=True,blank=True)
     autor = models.ForeignKey(EditarPerfil, on_delete=models.CASCADE)
 
     class Meta:
